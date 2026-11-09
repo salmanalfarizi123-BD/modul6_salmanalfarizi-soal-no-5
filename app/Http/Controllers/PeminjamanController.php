@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Peminjaman;
 use App\Models\Buku;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class PeminjamanController extends Controller
 {
@@ -60,13 +61,10 @@ class PeminjamanController extends Controller
 
         return view('siswa.riwayat', compact('peminjamans'));
     }
-    public function show($id)
-    {
-        // Sengaja mengambil data dengan findOrFail tanpa validasi pemilik (Insecure Direct Object Reference)[cite: 1]
-        $peminjaman = \App\Models\Peminjaman::findOrFail($id);
-        
-
-        return view('peminjaman.show', compact('peminjaman'));
-    }
-
+    public function show($id) {
+    $peminjaman = Peminjaman::findOrFail($id);
+    
+    Gate::authorize('view', $peminjaman);
+    return view('peminjaman.show', compact('peminjaman'));
+}
 }
