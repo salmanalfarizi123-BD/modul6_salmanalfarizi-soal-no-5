@@ -10,7 +10,7 @@
             
             <!-- Banner Sambutan Admin -->
             <div class="bg-gradient-to-r from-blue-900 to-blue-700 overflow-hidden shadow-md sm:rounded-xl p-8 text-white">
-                <h3 class="text-2xl font-bold mb-2">Selamat Datang, Administrator! 👨‍💼</h3>
+                <h3 class="text-2xl font-bold mb-2">Selamat Datang, Administrator!</h3>
                 <p class="text-blue-100 text-sm md:text-base">
                     Kelola seluruh sistem perpustakaan, data buku, peminjaman, hingga penetapan role pengguna melalui panel admin ini.
                 </p>
@@ -67,6 +67,17 @@
                     <div class="mt-6">
                         <a href="{{ route('admin.pengembalian.index') }}" class="inline-block bg-blue-900 hover:bg-blue-800 text-white text-xs font-semibold px-4 py-2 rounded-lg transition shadow">
                             Proses Pengembalian &rarr;
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-xl p-6 border border-blue-100 flex flex-col justify-between">
+                    <div>
+                        <div class="text-blue-900 font-semibold text-lg mb-1">Profil Akun</div>
+                        <p class="text-gray-500 text-sm">Kelola informasi akun dan periksa status profil Anda.</p>
+                    </div>
+                    <div class="mt-6">
+                        <a href="{{ route('profile.edit') }}" class="inline-block bg-blue-900 hover:bg-blue-800 text-white text-xs font-semibold px-4 py-2 rounded-lg transition shadow">
+                            Edit Profil &rarr;
                         </a>
                     </div>
                 </div>

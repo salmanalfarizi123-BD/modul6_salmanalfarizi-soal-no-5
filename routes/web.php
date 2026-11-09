@@ -87,5 +87,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/buku/{id}', [BukuController::class, 'show'])->name('buku.show');
 
 });
+Route::get('/test-error', function () {
+    throw new \Exception('Simulasi error keamanan sistem!');
+});
 
 require __DIR__.'/auth.php';
